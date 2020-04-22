@@ -13,20 +13,20 @@ expected = cfg_keys + "lib_name user branch license status min_python audience l
 for o in expected: assert o in cfg, "missing expected setting: {}".format(o)
 setup_cfg = {o:cfg[o] for o in cfg_keys}
 
-licenses = {
-    'apache2': ('Apache Software License 2.0','OSI Approved :: Apache Software License'),
-}
+#licenses = {
+#    'apache2': ('Apache Software License 2.0','OSI Approved :: Apache Software License'),
+#}
 statuses = [ '1 - Planning', '2 - Pre-Alpha', '3 - Alpha',
     '4 - Beta', '5 - Production/Stable', '6 - Mature', '7 - Inactive' ]
 py_versions = '2.0 2.1 2.2 2.3 2.4 2.5 2.6 2.7 3.0 3.1 3.2 3.3 3.4 3.5 3.6 3.7 3.8'.split()
 
 requirements = cfg.get('requirements','').split()
-lic = licenses[cfg['license']]
+#lic = licenses[cfg['license']]
 min_python = cfg['min_python']
 
 setuptools.setup(
     name = cfg['lib_name'],
-    license = lic[0],
+    #license = lic[0],
     classifiers = [
         'Development Status :: ' + statuses[int(cfg['status'])],
         'Intended Audience :: ' + cfg['audience'].title(),
